@@ -1,0 +1,45 @@
+body{
+background-image:url("imaa.jpg");
+    background-color: #e5e8e8
+}
+.f1{
+    width: 50px;
+}
+.t{
+width:50px;
+background-color:#f5b7b1;
+margin: 50px auto 0px auto;
+}
+.t1
+{
+background-color:lightgreen;
+}
+.l{
+background-color:lightblue;
+}
+.le{
+width:100px
+height:100px}
+h1{
+text-align:center;
+font-size:50px;
+text-decoration:underline;
+}
+input{
+text-align:center;
+border-color:green;
+margin:10px;
+background-color:white;}
+.rel{
+border-color:solid lightgray;
+background-color:white;
+margin:10px
+text-align:center;}
+textarea{
+background-color:white;
+margin:10px;
+text-align:center;
+}
+.s{
+background-color:#FAEBD7;
+}

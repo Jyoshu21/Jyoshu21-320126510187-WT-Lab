@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Guessing Game</title>
+        <style>
+            body{
+                
+                text-align: center;
+                background-image: url("e1.jpg");
+            }
+            background-image{
+                width: 700px;
+                height: 600px;
+            }
+            h1{
+                font-size: 50px;
+                margin-top: 30px;
+                color: red;
+            }
+            #guess_input{
+                width: 100px;
+                border-radius: 1cm;
+                font-size: 1cm;
+                background-color: aqua;
+            }
+            button{
+                font-size: 1cm;
+                border-radius: 1cm;
+                margin-top: 10px;
+                background-color: aqua;
+                font-family: "Comic Sans MS", cursive, sans-serif;
+            }
+            </style>
+    </head>
+    <body style="background-color: #e5e8e8;">
+        <h1>Guessing Game</h1><font size=+5>
+        <br><br><br><br><br>
+        <label for="guess_input">Guess a number between 1 and 100:</label></font size>
+        <input type="number" id="guess_input">
+        <button onclick="guess()">Guess</button>
+        <p id="result"></p><font size=+3>
+        <p>Remaining guesses: <span id="remaining">5</span></p>
+        </font size>
+        <script>
+            var answer = Math.floor(Math.random() * 100) + 1;
+            var remaining = 5;
+            function guess(){
+                var guess = document.getElementById("guess_input").value;
+                if(isNaN(guess) || guess < 1 || guess > 100){
+                    document.getElementById("result").innerHTML = "Invalid guess!";
+                }
+               else if(guess == answer){
+                    document.getElementById("result").innerHTML = "You got it!";
+                    document.getElementById("remaining").innerHTML = 0;
+                }
+                else if(guess > answer){
+                    document.getElementById("result").innerHTML = "Too high!";
+                    remaining--;
+                    document.getElementById("remaining").innerHTML = remaining;
+                }
+                else if(guess < answer){
+                    document.getElementById("result").innerHTML = "Too low!";
+                    remaining--;
+                    document.getElementById("remaining").innerHTML = remaining;
+                }
+                if(remaining == 0){
+                    document.getElementById("result").innerHTML = "You lose!";
+                }
+            }
+        </script>
+    </body>
+
+</html>

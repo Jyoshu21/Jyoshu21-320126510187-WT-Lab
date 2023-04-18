@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant Bill Generator</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			margin: 20px;
+			width: 100%;
+			text-align: center;
+		}
+		th, td {
+			padding: 10px;
+			border: 1px solid black;
+		}
+		
+form {
+    background-color: rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 2);
+    border-radius: 1cm;
+    color: cornsilk;
+}
+input
+{
+    font-size: 1.35vw;
+    font-family: 'Baloo Tamma 2', cursive;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 50px;
+    border: none;
+    color: black;
+    background-color: green;
+}
+
+#f1
+{
+    background-image: url(res.avif);
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+
+}
+        
+h1{
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    color: red;
+}
+input
+{
+    border-color: #ccc;
+    border: 1px solid #777;
+    background-color: antiquewhite;
+    margin: 10px;
+    text-align: center;
+    
+}
+body
+{
+    background-color: aquamarine;
+}
+textarea
+{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 14px;
+    width: 500px;
+    height: 100px;
+}
+.button {
+    background-color: #05c46b;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+select
+{
+
+    width: 100%;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+
+
+}
+
+	</style>
+</head>
+<body>
+	
+	<div id="f1">
+        <h1>Restaurant Bill Generator</h1>
+        <form>
+            <h2>Menu</h2>
+            <label>Biryani:</label>
+            <select name="Biryani">
+                <option value="Dum Biryani">Dum Biryani</option>
+            <option value="lollipop Biryani">Lollipop Biryani</option>
+            <option value="special Biryani">Special Biryani</option>
+            <option value="frypiece Biryani">Frypiece Biryani</option>
+            </select>
+            <br><br>
+            
+            <label>Salads:</label>
+            <select name="Salads">
+                <option value="Caesar Salad">Caesar Salad</option>
+            <option value="Greek Salad">Greek Salad</option>
+            <option value="Caprese Salad">Caprese Salad</option>
+            <option value="Cobb Salad">Cobb Salad</option>		
+        </select>
+            <br><br>
+            
+            <label>Pizza:</label>
+            <select name="Pizza">
+                <option value="Margherita Pizza">Margherita Pizza</option>
+            <option value="Pepperoni Pizza">Pepperoni Pizza</option>
+            <option value="Hawaiian Pizza">Hawaiian Pizza</option>
+            <option value="Vegetarian Pizza">Vegetarian Pizza</option>
+            
+        </select>
+            <br><br>
+            
+            <label>Cake:</label>
+            <select name="Cake">
+                <option value="Chocolate Cake">Chocolate Cake</option>
+            <option value="Cheesecake">Cheesecake</option>
+            <option value="Tiramisu">Tiramisu</option>
+            <option value="Fruit Tart">Fruit Tart</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Generate Bill">
+        </form>
+        
+    </div>
+	
+	<div>
+	<h2>Order Details</h2>
+	<table>
+		<tr>
+			<th>Type</th>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Subtotal</th>
+		</tr>
+		<tr>
+			<td>Biryani</td>
+			<td id="type1_item"></td>
+			<td>$5.00</td>
+			<td id="type1_quantity"></td>
+			<td id="type1_subtotal"></td>
+		</tr>
+		<tr>
+			<td>Salads</td>
+			<td id="type2_item"></td>
+			<td>$6.00</td>
+			<td id="type2_quantity"></td>
+			<td id="type2_subtotal"></td>
+		</tr>
+		<tr>
+			<td>Pizza</td>
+			<td id="type3_item"></td>
+            <td>$7.00</td>
+            <td id="type3_quantity"></td>
+            <td id="type3_subtotal"></td>
+        </tr>
+        <tr>
+            <td>Cakes</td>
+            <td id="type4_item"></td>
+            <td>$8.00</td>
+            <td id="type4_quantity"></td>
+            <td id="type4_subtotal"></td>
+        </tr>
+        <tr>
+            <td colspan="4">Total</td>
+            <td id="total"></td>
+        </tr>
+    </table>
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            let type1_item = document.querySelector("select[name='Biryani']").value;
+            let type1_quantity = parseInt(prompt("Enter quantity for " + type1_item));
+            let type2_item = document.querySelector("select[name='Salads']").value;
+            let type2_quantity = parseInt(prompt("Enter quantity for " + type2_item));
+            let type3_item = document.querySelector("select[name='Pizza']").value;
+            let type3_quantity = parseInt(prompt("Enter quantity for " + type3_item));
+            let type4_item = document.querySelector("select[name='Cake']").value;
+            let type4_quantity = parseInt(prompt("Enter quantity for " + type4_item)); 
+            document.querySelector("#type1_item").textContent = type1_item;
+            document.querySelector("#type1_quantity").textContent = type1_quantity;
+            document.querySelector("#type1_subtotal").textContent = "$" + (type1_quantity * 5).toFixed(2);
+            
+            document.querySelector("#type2_item").textContent = type2_item;
+            document.querySelector("#type2_quantity").textContent = type2_quantity;
+            document.querySelector("#type2_subtotal").textContent = "$" + (type2_quantity * 6).toFixed(2);
+            
+            document.querySelector("#type3_item").textContent = type3_item;
+            document.querySelector("#type3_quantity").textContent = type3_quantity;
+            document.querySelector("#type3_subtotal").textContent = "$" + (type3_quantity * 7).toFixed(2);
+            
+            document.querySelector("#type4_item").textContent = type4_item;
+            document.querySelector("#type4_quantity").textContent = type4_quantity;
+            document.querySelector("#type4_subtotal").textContent = "$" + (type4_quantity * 8).toFixed(2);
+            
+            let total = (type1_quantity * 5) + (type2_quantity * 6) + (type3_quantity * 7) + (type4_quantity * 8);
+            document.querySelector("#total").textContent = "$" + total.toFixed(2);
+        });
+    </script>
+

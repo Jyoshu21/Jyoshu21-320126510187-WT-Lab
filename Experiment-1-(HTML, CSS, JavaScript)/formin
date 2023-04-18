@@ -1,0 +1,80 @@
+<html>
+<head>
+<title> REGISTRATION PAGE </title>
+<link rel ="stylesheet" href ="form.css">
+</head>
+<body>
+<h1>STUDENT REGISTRATION FORM </h1>
+<form name="f1" action="first.php" method="post">
+<table class="t">
+<tr>
+<td> FIRST NAME: </td>
+<td><input type="text" name="nm"></td>
+</tr>
+<tr>
+<td> LAST NAME: </td>
+<td><input type="text" name="nm"></td>
+</tr>
+<tr>
+<td> EMAIL: </td>
+<td><input type="email" name="eid"></td>
+</tr>
+<tr>
+<td> PASSWORD: </td>
+<td><input type="password" name ="pwd"></td>
+</tr>
+<tr>
+<td> RE-PASSWORD: </td>
+<td><input type="password" name ="psd"></td>
+</tr>
+<tr>
+<td> DATE OF BIRTH: </td>
+<td><input type="date" name ="dob"></td>
+</tr>
+<tr>
+<td> mobile: </td>
+<td><input type="text" name ="mnum" maxlength=10></td>
+</tr>
+<tr>
+<td> GENDER: </td>
+<td><input type="radio" name="gen">male
+<input type="radio"  name="gen">female
+</td>
+</tr>
+<tr>
+<td>ADDRESS: </td>
+<td><textarea rows="5" cols="20"></textarea></td>
+</tr>
+<tr>
+<td> RELIGION: </td>
+<td><select class="rel">
+<option  value="hindu" >HINDU</option>
+<option value="c" >CHRISTHAN</option>
+<option value ="m">MUSLIM</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>COURSE APPLIED FOR: </td>
+<td><input type="radio"  name="male">CSE
+<input type="radio"  name="male">ECE
+<input type="radio"  name="male">MECH
+<input type="radio"  name="male">EEE
+</td>
+<tr>
+<td>LANGUAGES: </td>
+<td><input type="checkbox"  name="lan">telugu
+<input type="checkbox"  name="lan">hindi
+<input type="checkbox"  name="lan">english
+<input type="checkbox"  name="lan">others
+</td>
+</tr>
+<tr>
+<td> <input class="s" type="submit" name="submit"></td>
+<td> <input class="s" type="reset" name="reset"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
